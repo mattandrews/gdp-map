@@ -7,12 +7,15 @@ var csvConverter = new Converter({
     constructResult: true
 });
 
-csvConverter.on("end_parsed", function(jsonObj) {
+var writeJSON = function (jsonObj) {
     fs.writeFile("./GDP.json", JSON.stringify(jsonObj), function (err) {
         if (err) { throw err; }
-        console.log("file was saved");
+        console.log("file was written");
     });
+}
 
+csvConverter.on("end_parsed", function(jsonObj) {
+    writeJSON(jsonObj);
     geocode(jsonObj);
 });
 
@@ -28,7 +31,7 @@ var geocode = function (GDP) {
         if (err) { throw err; }
         var countries = JSON.parse(data);
 
-        GDP.map(function(item) {
+        var geocoded = GDP.map(function(item) {
             var row = _.find(countries, function(c) {
                 return c.cca3 === item.code;
             });
@@ -36,8 +39,11 @@ var geocode = function (GDP) {
                 console.log("no match for " + item.name);
             } else {
                 // console.log(row.cca3, item.name);
+                item.latlng = row.latlng;
             }
-        })
+            return item;
+        });
+        writeJSON(geocoded);
     })
 };
 
