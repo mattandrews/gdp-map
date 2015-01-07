@@ -11,13 +11,16 @@ body,
 }
 
 #map-canvas {
-    float: left;
-    width: 80%;
+    width: 100%;
 }
 
 aside {
-    float: right;
-    width: 20%;
+    position: absolute;
+    right: 40px;
+    background: none repeat scroll 0% 0% #FFF;
+    bottom: 40px;
+    box-shadow: 0px 1px 6px #666;
+    height: 50%;
     overflow: auto;
 }
 
@@ -27,4 +30,36 @@ aside {
 
 .is-hidden {
     display: none;
+}
+
+.map-table {
+    font-family: arial;
+    font-size: 14px;
+    color: #333333;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.map-table thead {
+    background-color: #cccccc;
+}
+
+.map-table th,
+.map-table td {
+    padding: 7px 10px;
+    text-align: left;
+}
+
+.map-table td {
+    border-bottom: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+}
+
+.map-table td:last-child {
+    border-right: none;
+}
+
+.map-table tr:hover {
+    background-color: #e7e7e7;
+    cursor: pointer;
 }
