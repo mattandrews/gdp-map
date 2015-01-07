@@ -13,6 +13,7 @@ require(['bower_components/reqwest/reqwest'], function(reqwest) {
             scrollwheel: false
         };
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        fetchJSON();
     };
 
     var fetchJSON = function() {
@@ -45,13 +46,13 @@ require(['bower_components/reqwest/reqwest'], function(reqwest) {
 
             google.maps.event.addListener(marker, 'click', function() {
                 infowindow.open(map, marker);
-                if (currentInfoWindow) {
-                    currentInfoWindow.close();
-                }
                 currentInfoWindow = infowindow;
             });
 
             google.maps.event.addListener(marker, 'mouseover', function() {
+                if (currentInfoWindow) {
+                    currentInfoWindow.close();
+                }
                 google.maps.event.trigger(this, 'click');
             });
 
@@ -66,12 +67,11 @@ require(['bower_components/reqwest/reqwest'], function(reqwest) {
         var tableBody = document.querySelector('#js-table tbody');
         var html = '';
         json.forEach(function(country) {
-            html += '<tr><td>' + country.name + '</td><td>$' + formatPrice(country.gdp) + '</td></tr>';
+            html += '<tr><td>' + country.rank + '</td><td>' + country.name + '</td><td>$' + formatPrice(country.gdp) + '</td></tr>';
         });
         tableBody.innerHTML = html;
         document.getElementById('js-table').classList.remove('is-hidden');
     }
 
     initializeMap();
-    fetchJSON();
-})
+});

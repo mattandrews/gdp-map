@@ -38,7 +38,6 @@ var geocode = function (GDP) {
             if (!row) {
                 console.log("no match for " + item.name);
             } else {
-                // console.log(row.cca3, item.name);
                 item.latlng = row.latlng;
             }
             return item;
