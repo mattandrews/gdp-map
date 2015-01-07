@@ -51,7 +51,7 @@ DZA,49,"Algeria",210183
 QAT,50,"Qatar",202450
 PER,51,"Peru",202296
 CZE,52,"Czech Republic",198450
-ROM,53,"Romania",189638
+ROU,53,"Romania",189638
 KWT,54,"Kuwait",183219
 NZL,55,"New Zealand",182594
 UKR,56,"Ukraine",177431
@@ -94,7 +94,7 @@ JOR,92,"Jordan",33678
 TZA,93,"Tanzania",33225
 BHR,94,"Bahrain",32788
 CIV,95,"Côte d'Ivoire",30905
-ZAR,96,"Congo, Dem. Rep.",30629
+COD,96,"Congo, Dem. Rep.",30629
 BOL,97,"Bolivia",30601
 PRY,98,"Paraguay",29949
 CMR,99,"Cameroon",29275
@@ -144,7 +144,7 @@ MDA,142,"Moldova",7935
 RWA,143,"Rwanda",7452
 NER,144,"Niger",7356
 KGZ,145,"Kyrgyz Republic",7226
-KSV,146,"Kosovo",6960
+KOS,146,"Kosovo",6960
 GIN,147,"Guinea",6193
 MCO,148,"Monaco",6075
 BMU,149,"Bermuda",5474
@@ -166,7 +166,7 @@ LSO,164,"Lesotho",2230
 LBR,165,"Liberia",1951
 CPV,166,"Cape Verde",1888
 BTN,167,"Bhutan",1884
-TMP,168,"Timor-Leste",1615
+TLS,168,"Timor-Leste",1615
 BLZ,169,"Belize",1605
 CAF,170,"Central African Republic",1538
 DJI,171,"Djibouti",1456
