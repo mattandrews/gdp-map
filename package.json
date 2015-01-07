@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "csvtojson": "^0.3.17"
+    "csvtojson": "^0.3.17",
+    "underscore": "^1.7.0",
+    "world-countries": "^1.6.0"
   }
 }
