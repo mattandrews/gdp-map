@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="map.css" />
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuCZMcmSCGizwbAuqWSZ7UDDjAjdtm1ek">
+    </script>
+
+</head>
+
+    <body>
+        <div id="map-canvas"></div>
+        <aside>
+            <table class="map-table is-hidden" id="js-table">
+                <thead>
+                    <tr>
+                        <th>Country name</th>
+                        <th>GDP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </aside>
+
+        <script type="text/javascript" src="bower_components/requirejs/require.js" data-main="app"></script>
+    </body>
+
+</html>

@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#map-canvas {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map-canvas {
+    float: left;
+    width: 80%;
+}
+
+aside {
+    float: right;
+    width: 20%;
+    overflow: auto;
+}
+
+.map-marker {
+    width: 200px;
+}
+
+.is-hidden {
+    display: none;
+}
