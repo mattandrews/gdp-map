@@ -9,7 +9,8 @@ require(['bower_components/reqwest/reqwest'], function(reqwest) {
                 lat: 51.5072,
                 lng: 0.1275
             },
-            zoom: 3
+            zoom: 3,
+            scrollwheel: false
         };
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     };
@@ -33,7 +34,7 @@ require(['bower_components/reqwest/reqwest'], function(reqwest) {
         json.forEach(function(country) {
 
             var infowindow = new google.maps.InfoWindow({
-                content: '<div class="map-marker"><h4>' + country.name + '</h4><h5>$' + country.gdp + "</h5></div>"
+                content: '<div class="map-marker"><h4>' + country.name + '</h4><h5>$' + formatPrice(country.gdp) + "</h5></div>"
             });
 
             var marker = new google.maps.Marker({
@@ -57,11 +58,15 @@ require(['bower_components/reqwest/reqwest'], function(reqwest) {
         })
     };
 
+    var formatPrice = function (num) {
+        return Number(num.toFixed(1)).toLocaleString()
+    }
+
     var buildTable = function (json) {
         var tableBody = document.querySelector('#js-table tbody');
         var html = '';
         json.forEach(function(country) {
-            html += '<tr><td>' + country.name + '</td><td>$' + country.gdp + '</td></tr>';
+            html += '<tr><td>' + country.name + '</td><td>$' + formatPrice(country.gdp) + '</td></tr>';
         });
         tableBody.innerHTML = html;
         document.getElementById('js-table').classList.remove('is-hidden');
