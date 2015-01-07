@@ -16,5 +16,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "reqwest": "~1.1.5",
+    "requirejs": "~2.1.15"
+  }
 }
